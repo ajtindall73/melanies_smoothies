@@ -35,7 +35,7 @@ if ingredients_list:
 
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
-        st.subheader(fruit_chosen + ' Nutritiion Information')
+        st.subheader(fruit_chosen + ' Nutrition Information')
         if fruit_chosen == 'Dragon Fruit':
             fruit_chosen = 'Dragonfruit'
         fruit_chosen = p.singular_noun(fruit_chosen)
