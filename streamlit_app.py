@@ -51,7 +51,7 @@ if ingredients_list:
         # if fruit_chosen == 'Dragon Fruit':
         #     fruit_chosen = 'Dragonfruit'
         # fruit_chosen = p.singular_noun(fruit_chosen)
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen)
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + search_on)
         fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
 
     # st.write(ingredients_string)
