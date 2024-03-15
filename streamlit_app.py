@@ -35,10 +35,10 @@ if ingredients_list:
 
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
-        fruit_chosen = p.singular_noun(fruit_chosen)
+        st.subheader(fruit_chosen + ' Nutritiion Information')
         if fruit_chosen == 'Dragon Fruit':
             fruit_chosen = 'Dragonfruit'
-        st.subheader(fruit_chosen + ' Nutritiion Information')
+        fruit_chosen = p.singular_noun(fruit_chosen)
         fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen)
         fv_df = st.dataframe(data=fruityvice_response.json(), use_container_width=True)
 
