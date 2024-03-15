@@ -3,7 +3,8 @@ import streamlit as st
 # from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
 import requests
-from en import singular
+import inflect
+p = inflect.engine()
 
 # Write directly to the app
 st.title(":cup_with_straw: Customize Your Smoothie :cup_with_straw:")
@@ -34,7 +35,7 @@ if ingredients_list:
 
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
-        fruit_chosen = singular(fruit_chosen)
+        fruit_chosen = p.singular_noun(fruit_chosen)
         if fruit_chosen == 'Dragon Fruit':
             fruit_chosen = 'Dragonfruit'
         st.subheader(fruit_chosen + ' Nutritiion Information')
